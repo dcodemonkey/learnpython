@@ -185,61 +185,312 @@
 
 # Inheritance: Inheritance is a mechanism in object-oriented programming (OOP) where one class can inherit the  properties and methods of another class. The class that is being inherited from is called the parent or superclass , and the class that is doing the inheriting is called the child or subclass.
 
-class Car:
-    @staticmethod
-    def  start_engine():
-        return "Engine started"
-    @staticmethod
-    def  stop_engine():
-        return "Engine stopped"
+# class Car:
+#     # color = "Black"
+#     @staticmethod
+#     def  start_engine():
+#         return "Engine started"
+#     @staticmethod
+#     def  stop_engine():
+#         return "Engine stopped"
     
-class ToyotaCar(Car):
-    def __init__(self, name) -> None:
-        self.name = name
+# class ToyotaCar(Car):
+#     def __init__(self, brand):
+#         self.brand = brand
+
+# class Fortuner(ToyotaCar):
+#     def __init__(self, type):
+#         self.type = type
 
 
-car1 =  ToyotaCar("Fortuner")
-car2 = ToyotaCar("Corola")
+# car1 = Fortuner("Diesel")
+# print(car1.start_engine())
 
-print(car1.name)
-print(car1.start_engine())
-print(car2.name)
-print(car2.start_engine())
+# car1 =  ToyotaCar("Fortuner")
+# car2 = ToyotaCar("Corola")
+
+# print(car1.name)
+# print(car1.start_engine())
+# print(car2.name)
+# print(car2.start_engine())
+# print(car1.color)
 
 # Types of Inheritence in Python:
-# 1. Single Inheritance: In single inheritance, a child class inherits the properties and methods  of a single parent class.
+# 1. Single Inheritance: In single inheritance, a child class inherits the properties and methods  of a single parent class(base class).
+# class Car:
+#     # color = "Black"
+#     @staticmethod
+#     def  start_engine():
+#         return "Engine started"
+#     @staticmethod
+#     def  stop_engine():
+#         return "Engine stopped"
+    
+# class ToyotaCar(Car):
+#     def __init__(self, brand):
+#         self.brand = brand
+
+# class Fortuner(ToyotaCar):
+#     def __init__(self, type):
+#         self.type = type
+
+# car1 = Fortuner("Diesel")
+# print(car1.start_engine())
+
+# car1 =  ToyotaCar("Fortuner")
+# car2 = ToyotaCar("Corola")
+
+# print(car1.name)
+# print(car1.start_engine())
+# print(car2.name)
+# print(car2.start_engine())
+# print(car1.color)
 # 2. Multiple Inheritance: In multiple inheritance, a child class inherits the properties and methods of more than one parent class.
+
+# class A:
+#     varA =  "Welcome to Class A"
+
+# class B:
+#     varB = "Welcome to Class B"
+
+# class C(A, B): #  C is child class and A and B are parent classes
+#     varC =  "Welcome to Class C"
+
+# c1 =  C()
+# print(c1.varA)
+# print(c1.varB)
+# print(c1.varC)
+
+
+# Super method:  The super() function in Python is used to give access to methods and properties of a parent or sibling  class. It returns a proxy object that allows you to call methods of its parent class.  It is used to invoke methods of a superclass from a subclass.
+
+# class Car:
+
+#     def __init__(self, type):
+#         self.type = type
+
+#     @staticmethod
+#     def  start_engine():
+#         print("Engine started...")
+#     @staticmethod
+#     def  stop_engine():
+#         print("Engine Stopped...")
+    
+# class ToyotaCar(Car):
+#     def __init__(self, name, type):
+#         super().__init__(type)
+#         self.name = name
+#         super().start_engine()
+        
+# car1 = ToyotaCar("Urban Cruiser", "electric")
+# print(car1.type)
+
+# Class method: A class method is a method that is called on a class rather than on an instance of the  class. It is used to create a new instance of the class. It is used to create a  new instance of the class.
+
+# class Person:
+#     name = "anonymous"
+    
+#     # def changeName(self, name):
+#     #     self.__class__.name = name # self.__class__ is used to access the class itself
+#     #     # Person.name = name #  class method  to change the class variable
+#     @classmethod
+#     def changeName(cls, name):
+#         cls.name = "John" # class method to change the class variable
+
+# p1 =  Person()
+# print(p1.name)
+# p1.changeName("Kunal Choudhary")
+# print(p1.name)
+# print(Person.name)
+
+# Instance Methods: Use self to access and modify the instance.
+
+# Class Methods: Use cls to access and modify the class.
+
+# Static Methods: Don’t access instance or class data; standalone functions within the class.
+
+# @property Decorator:  This is a read-only property. It can be used to make a method look like an attribute.
+
+# class Student:
+#     def __init__(self, phy, chem, math):
+#         self.phy = phy
+#         self.chem = chem
+#         self.math = math
+        # self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%"
+
+    # def calculatePercentage(self):
+    #    self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%" 
+
+# @property # decorator to make a method look like an attribute
+#     def percentage(self):  # read-only property
+#         return  str((self.phy +  self.chem + self.math) / 3) + "%"
+ 
+# s1 =  Student(99,91,93)
+# print(s1.percentage)
+
+# s1.phy = 100
+# print(s1.phy)
+# s1.calculatePercentage()
+# print(s1.percentage)
+
+# s1.phy = 85
+# print(s1.percentage)
+
+
 # 3. Multilevel Inheritance: In multilevel inheritance, a child class inherits  the properties and methods  of a parent class, and the parent class also inherits the properties and methods of another parent class.
 
+# class  GrandParent:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#     def display(self):
+#         print("GrandParent name:", self.name, "age:", self.age)
+
+
+# class Parent(GrandParent):
+#     def __init__(self, name, age, address):
+#         super().__init__(name, age)
+#         self.address = address
+#     def display(self):
+#         super().display()
+#         print("Parent name:", self.name, "age:", self.age, "address:", self.address )
+
+
+# class Child(Parent):
+#     def __init__(self, name, age, address, grade):
+#         super().__init__(name, age, address)
+#         self.grade = grade
+#     def display(self):
+#         super().display()
+#         print("Child name:", self.name, "age:", self.age, "address:", self.address , "grade:", self.grade)
+
+# g1 = GrandParent("Rahul", 25)
+# g1.display()
+# print(g1.name, g1.age)
+
+
+# Polymorphism: Operator overloading
+# when the same operator is used with different operands and different operations are performed, it is called operator overloading.
+
+# print(1 + 2) # 3
+# print("Hello" + "World") # operator overloading
+# print([1,2,3] + [4,5,6]) # merge
 
 
 
+# Polymorphism is the ability of an object to take on multiple forms. This can be achieved through method overriding or method overloading.
+# Method Overriding: When a subclass provides a different implementation of a method that is already available in its superclass, it is known as method overriding.  The method in the subclass has the same name, same parameters, but different implementation.
+# Method Overloading: When two or more methods in a class have the same name but different  parameters, it is known as method overloading.The method to be invoked is determined at compile time.It is not possible in Python.
+
+# class Complex:
+#     def __init__(self, real, img):
+#         self.real = real
+#         self.img = img
+
+#     def  showNumber(self):
+#         print(self.real,"i+", self.img,"j")
+
+#     def __add__(self, num2):
+#         newReal = self.real + num2.real
+#         newImg = self.img + num2.img
+#         return Complex(newReal,  newImg)
+    
+#     def __sub__(self, num2):
+#         newReal = self.real - num2.real
+#         newImg = self.img - num2.img
+#         return Complex(newReal,  newImg)
+    
+#     def __mul__(self, num2):
+#         newReal = self.real * num2.real - self.img * num2.img
+#         newImg = self.real * num2.img + self.img * num2.real
+#         return Complex(newReal,  newImg)
+#     def  __truediv__(self, num2):
+#         newReal = (self.real * num2.real + self.img * num2.img) / (num2.real ** 2 + num2.img ** 2)
+#         newImg = (self.img * num2.real - self.real * num2.img) / (num2.real ** 2 + num2.img ** 2)
+#         return Complex(newReal,  newImg)
+
+# num1 =  Complex(3, 4)
+# num1.showNumber()
+
+# num2 =  Complex(9, 7)
+# num2.showNumber()
+
+# num3 = num1.add(num2)
+# num3.showNumber()
+
+# num3 = num1 + num2
+# num3.showNumber()
 
 
 
+# Let's Practice with the following problem:
+
+#Qs. Define a circle class to create a circle with radius using the constructor.
+# Define a Area()  method to calculate the area of the circle.
+# Define a perimeter() method  to calculate the perimeter of the circle.
+
+# class Circle:
+#     def __init__(self, radius):
+#         self.radius = radius
+#     def area(self):
+#         return (22/7) * (self.radius ** 2)
+#     def perimeter(self):
+#         return 2 * (22/7) * self.radius
+
+# c1 =  Circle(21)
+
+# print(c1.area()) # Output: 1380.84
+# print(c1.perimeter()) # Output: 132.0
 
 
+# Qs. Define a Employee class with attributes role, department & salary. This class should also contain a showDetails() method.
+# Create a Engineer class  that inherits from Employee & has additional attributes  like experience & skills.
 
 
+class Employee:
+    def __init__(self, role, department, salary):
+        self.role = role
+        self.department = department
+        self.salary = salary
+    def showDetails(self):
+        print(f"Role: {self.role}")
+        print(f"Department: {self.department}")
+        print(f"Salary: {self.salary}")
+
+class Engineer(Employee):
+    def __init__(self, role, department, salary, experience, skills):
+        super().__init__(role, department, salary)
+        self.experience = experience
+        self.skills = skills
+        self.showDetails()
+    def  showDetails(self):
+        super().showDetails()
+        print(f"Experience: {self.experience}")
+        print(f"Skills: {self.skills}")
+
+# Creating an  object of Employee class
+emp1 = Employee("Software Engineer", "IT", 50000)
+emp1.showDetails()
+print("EMP2")
+# Creating an object of Engineer class
+emp2 =  Engineer("Software Engineer", "IT", 50000, 5, ["Python", "Java"])
+emp2.showDetails()
 
 
+#Qs. Create a class called Order which stores item & its price. Use Dunder function __gt__() to convey that
 
+class Order:
+    def __init__(self, item, price):
+        self.item = item
+        self.price = price
+    def  __gt__(self, other):
+        return self.price > other.price
 
-
-
-# Polymorphism
-
-
-
-
-
-
-
-
-
-
-
-
+# Creating objects of Order class
+order1 = Order("Apple", 10)
+order2 = Order("Banana", 5)
+# Comparing two objects using > operator
+print(order1 > order2)  # Output: True
 
 
 
