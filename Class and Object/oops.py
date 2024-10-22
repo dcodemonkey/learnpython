@@ -113,41 +113,120 @@
 # Encapsulation is used to hide the internal details of an object from the outside world and only expose  the necessary information through public methods.
 # In Python, encapsulation is achieved through the use of classes and objects.
 # Example:
-class BankAccount:
-    def __init__(self, account_number, balance):
-        self.account_number = account_number
-        self.balance = balance
-    # debit method
-    def debit(self, amount):
-        if amount > 0 and amount <= self.balance:
-            self.balance -= amount
-            return print(f"Debited ${amount}. Remaining balance is ${self.balance}")
-        else:
-            return print("Insufficient balance")
-    # Credit Method
-    def credit(self,  amount):
-        if amount > 0:
-            self.balance += amount
-            return print(f"Credited ${amount}. Remaining balance is ${self.balance}")
-        else:
-            return print("Invalid amount")
+# class BankAccount:
+#     def __init__(self, account_number, balance):
+#         self.account_number = account_number
+#         self.balance = balance
+#     # debit method
+#     def debit(self, amount):
+#         if amount > 0 and amount <= self.balance:
+#             self.balance -= amount
+#             return print(f"Debited ${amount}. Remaining balance is ${self.balance}")
+#         else:
+#             return print("Insufficient balance")
+#     # Credit Method
+#     def credit(self,  amount):
+#         if amount > 0:
+#             self.balance += amount
+#             return print(f"Credited ${amount}. Remaining balance is ${self.balance}")
+#         else:
+#             return print("Invalid amount")
+
+# account = BankAccount("12345", 10000)
+# account.debit(500)
+# account.credit(1000)
+
+
+
+# del keyword:  The del keyword is used to delete an object or a variable in Python.
+
+# class Student:
+#   def __init__(self, name):
+#     self.name = name
+
+# student1 =  Student("John")
+
+# print(student1.name)
+# del student1 #  delete the object
+# print(student1.name)
+
+# Private(like) attributes &  methods:  In Python, we can use a single underscore prefix to indicate that a method or attribute is intended to be private, but it's not enforced by the language.
+
+# Conceptual Implementation: Private attributes and methods are intended to be used internally within a class and should not be accessed directly from outside the class.
+
+
+# class BankAccount:
+#     def __init__(self, account_number, account_password):
+#         self.account_number = account_number
+#         self.__account_password = account_password
+       
+# # create an instance of the class
+# account = BankAccount("12345", "password")
+# # access the private attribute directly
+# print(account.__account_password)  # This will raise an AttributeError
+
+
+# class Person:
+#     __name = "anonymous"
+
+#     def __hello(self, name):
+#         self.__name = name
+#         print(f"Hello! {name}")
+    
+#     def welcome(self):
+#         self.__hello("Kunal")
+#         print(f"Welcome , {self.__name}")
+
+
+# p1 =  Person()
+# p1.welcome()
+
+
+
+# Inheritance: Inheritance is a mechanism in object-oriented programming (OOP) where one class can inherit the  properties and methods of another class. The class that is being inherited from is called the parent or superclass , and the class that is doing the inheriting is called the child or subclass.
+
+class Car:
+    @staticmethod
+    def  start_engine():
+        return "Engine started"
+    @staticmethod
+    def  stop_engine():
+        return "Engine stopped"
+    
+class ToyotaCar(Car):
+    def __init__(self, name) -> None:
+        self.name = name
+
+
+car1 =  ToyotaCar("Fortuner")
+car2 = ToyotaCar("Corola")
+
+print(car1.name)
+print(car1.start_engine())
+print(car2.name)
+print(car2.start_engine())
+
+# Types of Inheritence in Python:
+# 1. Single Inheritance: In single inheritance, a child class inherits the properties and methods  of a single parent class.
+# 2. Multiple Inheritance: In multiple inheritance, a child class inherits the properties and methods of more than one parent class.
+# 3. Multilevel Inheritance: In multilevel inheritance, a child class inherits  the properties and methods  of a parent class, and the parent class also inherits the properties and methods of another parent class.
 
 
 
 
-account = BankAccount("12345", 10000)
-account.debit(500)
-account.credit(1000)
 
 
 
 
 
-            
 
 
 
-# Inheritance
+
+
+
+
+
 # Polymorphism
 
 
