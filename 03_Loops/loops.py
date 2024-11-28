@@ -40,12 +40,25 @@
 #   index = index + 1
 
 
-nums = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
-i = 0
-while i  < len(nums):
-  if nums[i] ==  16:
-    print(nums[i])
-  i  = i + 1
+# nums = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+# i = 0
+# while i  < len(nums):
+#   if nums[i] ==  16:
+#     print(nums[i])
+#   i  = i + 1
+
+
+# for loops in python: for loop is used to iterate over a sequence (such as a list, tuple, dictionary, set , or string) or other iterable object, executing a block of code for each item in it.
+
+# Print the elements of the following list using for loop
+
+list = [1, 4, 9, 16, 25, 36 , 49, 64, 81, 100]
+
+for i in list:
+    if i == 16:
+      print(i)
+
+
 
 
 
