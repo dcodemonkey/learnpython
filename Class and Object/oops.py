@@ -203,13 +203,8 @@
 #         self.type = type
 
 
-<<<<<<< HEAD
-car1 = ToyotaCar("Fortuner")
-car2 = ToyotaCar("Corola")
-=======
 # car1 = Fortuner("Diesel")
 # print(car1.start_engine())
->>>>>>> 1e6b716e928ded1cd7747f2fa585bbe51e5d7251
 
 # car1 =  ToyotaCar("Fortuner")
 # car2 = ToyotaCar("Corola")
@@ -321,12 +316,12 @@ car2 = ToyotaCar("Corola")
 #         self.phy = phy
 #         self.chem = chem
 #         self.math = math
-        # self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%"
+#         self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%"
 
-    # def calculatePercentage(self):
-    #    self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%" 
+#     def calculatePercentage(self):
+#        self.percentage = str((self.phy +  self.chem + self.math) / 3) + "%" 
 
-# @property # decorator to make a method look like an attribute
+#     @property # decorator to make a method look like an attribute
 #     def percentage(self):  # read-only property
 #         return  str((self.phy +  self.chem + self.math) / 3) + "%"
  
@@ -452,50 +447,50 @@ car2 = ToyotaCar("Corola")
 # Create a Engineer class  that inherits from Employee & has additional attributes  like experience & skills.
 
 
-class Employee:
-    def __init__(self, role, department, salary):
-        self.role = role
-        self.department = department
-        self.salary = salary
-    def showDetails(self):
-        print(f"Role: {self.role}")
-        print(f"Department: {self.department}")
-        print(f"Salary: {self.salary}")
+# class Employee:
+#     def __init__(self, role, department, salary):
+#         self.role = role
+#         self.department = department
+#         self.salary = salary
+#     def showDetails(self):
+#         print(f"Role: {self.role}")
+#         print(f"Department: {self.department}")
+#         print(f"Salary: {self.salary}")
 
-class Engineer(Employee):
-    def __init__(self, role, department, salary, experience, skills):
-        super().__init__(role, department, salary)
-        self.experience = experience
-        self.skills = skills
-        self.showDetails()
-    def  showDetails(self):
-        super().showDetails()
-        print(f"Experience: {self.experience}")
-        print(f"Skills: {self.skills}")
+# class Engineer(Employee):
+#     def __init__(self, role, department, salary, experience, skills):
+#         super().__init__(role, department, salary)
+#         self.experience = experience
+#         self.skills = skills
+#         self.showDetails()
+#     def  showDetails(self):
+#         super().showDetails()
+#         print(f"Experience: {self.experience}")
+#         print(f"Skills: {self.skills}")
 
-# Creating an  object of Employee class
-emp1 = Employee("Software Engineer", "IT", 50000)
-emp1.showDetails()
-print("EMP2")
-# Creating an object of Engineer class
-emp2 =  Engineer("Software Engineer", "IT", 50000, 5, ["Python", "Java"])
-emp2.showDetails()
+# # Creating an  object of Employee class
+# emp1 = Employee("Software Engineer", "IT", 50000)
+# emp1.showDetails()
+# print("EMP2")
+# # Creating an object of Engineer class
+# emp2 =  Engineer("Software Engineer", "IT", 50000, 5, ["Python", "Java"])
+# emp2.showDetails()
 
 
-#Qs. Create a class called Order which stores item & its price. Use Dunder function __gt__() to convey that
+# #Qs. Create a class called Order which stores item & its price. Use Dunder function __gt__() to convey that
 
-class Order:
-    def __init__(self, item, price):
-        self.item = item
-        self.price = price
-    def  __gt__(self, other):
-        return self.price > other.price
+# class Order:
+#     def __init__(self, item, price):
+#         self.item = item
+#         self.price = price
+#     def  __gt__(self, other):
+#         return self.price > other.price
 
-# Creating objects of Order class
-order1 = Order("Apple", 10)
-order2 = Order("Banana", 5)
-# Comparing two objects using > operator
-print(order1 > order2)  # Output: True
+# # Creating objects of Order class
+# order1 = Order("Apple", 10)
+# order2 = Order("Banana", 5)
+# # Comparing two objects using > operator
+# print(order1 > order2)  # Output: True
 
 
 

@@ -1,4 +1,3 @@
-
 def debug(func):
     def wrapper(*args, **kwargs):
         args_value = ', '.join(str(arg) for arg in args)
@@ -12,9 +11,9 @@ def debug(func):
 def hello():
     print("Hello!")
 
-@debug
+
 def greet(name, greeting="Hello"):
     print(f"{greeting} {name}")
 
 hello()
-greet("Chai", greeting="Hanji")
+# greet("Chai", greeting="Hanji")
